@@ -5,7 +5,8 @@ def detect_english_words(text):
     Detects English words in a given text using regular expressions.
     """
     # Regular expression to match English words (letters a-z, case insensitive)
-    english_word_pattern = re.compile(r'\b[a-zA-Z]+\b')
+    english_word_pattern = re.compile(r'[\u0966-\u096F]+')
+
     
     # Find all English words in the text
     english_words = english_word_pattern.findall(text)
@@ -14,7 +15,7 @@ def detect_english_words(text):
 
 def main():
     # Example Nepali dataset with some English words
-    with open("updated_nepali_text(2).txt", "r", encoding="utf-8") as file:
+    with open("final_ling8k_nepali.txt", "r", encoding="utf-8") as file:
         nepali_dataset = file.read()
 
     # Detect English words in the dataset
